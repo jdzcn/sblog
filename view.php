@@ -3,8 +3,8 @@
 include('header.php');
 include('Parser.php');
 
-$filename='2021-02-04-typora-图片.md';
-
+$filename=$_GET['name'];
+echo $filename;
 $content = file_get_contents($filename);
 $lines = explode("\n", $content);
 $skipped_content = implode("\n", array_slice($lines, 5));
