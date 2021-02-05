@@ -18,6 +18,9 @@
 				margin: 0 auto;
 				padding: 45px;
 			}
+			footer {
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>

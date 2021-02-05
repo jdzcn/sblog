@@ -1,4 +1,6 @@
+<footer>
 <hr>
-<p>Power by songbin.</p>
+<p><a href='mailto:jdzcn@qq.com'>jdzcn@qq.com</a></p>
+</footer>
 </body>
 </html>
