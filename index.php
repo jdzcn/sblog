@@ -15,7 +15,16 @@ function read_line($fileName) {
 
 
 include('header.php');
-
+#echo $_GET['key'];
+$q = isset($_GET['key'])? htmlspecialchars($_GET['key']) : '';
+if($q) {
+    exec("find ".DIR." -name '*$q*'",$result);
+    
+    foreach($result as $line)
+    #echo $line;
+    echo "<a href='view.php?name=$line'>".read_line($line)."</a><br>";
+}
+else
 if ($handle = opendir(DIR)) {
     while (false !== ($entry = readdir($handle))) {
         if ($entry != "." && $entry != "..") {

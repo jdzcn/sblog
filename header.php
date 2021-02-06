@@ -16,12 +16,27 @@
 				min-width: 200px;
 				max-width: 980px;
 				margin: 0 auto;
-				padding: 45px;
+				padding: 10px;
 			}
 			footer {
 				text-align: center;
 			}
+			form {
+				display:inline;
+				float:right;
+			}
+			h3 {
+				display:inline;
+			}
+
 		</style>
 	</head>
 	<body>
-<div id="header"><h3><a href='/'><?=TITLE?></a></h3><hr></div>
+	<header>
+		<h3><a href='/'><?=TITLE?></a></h3>
+		<form action='index.php' method="get"> 
+  			<input type="search" id="query" name="key" placeholder="Search...">
+  			<button>GO</button>
+		</form>	
+		<hr>
+	</header>
