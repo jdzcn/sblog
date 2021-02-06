@@ -22,10 +22,20 @@ if($q) {
     
     foreach($result as $line)
     #echo $line;
-    echo "<a href='view.php?name=$line'>".read_line($line)."</a><br>";
+    echo substr($line,strlen(DIR),10)."&nbsp;<a href='view.php?name=$line'>".read_line($line)."</a><br>";
 }
-else
-if ($handle = opendir(DIR)) {
+else {
+    $files = scandir(DIR);
+    rsort($files);
+    foreach ($files as $file) {
+        if ($file != '.' && $file != '..') {
+            echo substr($file,0,10)."&nbsp;<a href='view.php?name=".DIR."$file'>".read_line(DIR.$file)."</a><br>";
+            
+        }
+    }
+}
+
+/* if ($handle = opendir(DIR)) {
     while (false !== ($entry = readdir($handle))) {
         if ($entry != "." && $entry != "..") {
             echo "<a href='view.php?name=".DIR."$entry'>".read_line(DIR.$entry)."</a><br>";
@@ -33,7 +43,7 @@ if ($handle = opendir(DIR)) {
         }
     }
     closedir($handle);
-}
+} */
 
 include('footer.php');
 ?>

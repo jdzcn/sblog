@@ -16,7 +16,7 @@
 				min-width: 200px;
 				max-width: 980px;
 				margin: 0 auto;
-				padding: 10px;
+				padding: 20px;
 			}
 			footer {
 				text-align: center;
