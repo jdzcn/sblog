@@ -1,6 +1,6 @@
 <?php
 	define('TITLE','宋斌的网络日志');
-	define('DIR','jdzcn.github.io/_posts/');
+	define('DIR','../jdzcn.github.io/_posts/');
 ?>
 
 <!doctype html>
@@ -14,9 +14,10 @@
 			body {
 				box-sizing: border-box;
 				min-width: 200px;
+				font-size:1.3em;
 				max-width: 980px;
 				margin: 0 auto;
-				padding: 20px;
+				padding: 10px;
 			}
 			footer {
 				text-align: center;
@@ -25,15 +26,11 @@
 				display:inline;
 				float:right;
 			}
-			h3 {
-				display:inline;
-			}
-
 		</style>
 	</head>
 	<body>
 	<header>
-		<h3><a href='/'><?=TITLE?></a></h3>
+		<a href="<?=dirname($_SERVER['SCRIPT_NAME'])?>"><b><?=TITLE?></b></a>
 		<form action='index.php' method="get"> 
   			<input type="search" id="query" name="key" placeholder="Search...">
   			<button>GO</button>

@@ -22,14 +22,14 @@ if($q) {
     
     foreach($result as $line)
     #echo $line;
-    echo substr($line,strlen(DIR),10)."&nbsp;<a href='view.php?name=$line'>".read_line($line)."</a><br>";
+    echo "<a href='view.php?name=$line'>".read_line($line)."</a><br>";
 }
 else {
     $files = scandir(DIR);
     rsort($files);
     foreach ($files as $file) {
         if ($file != '.' && $file != '..') {
-            echo substr($file,0,10)."&nbsp;<a href='view.php?name=".DIR."$file'>".read_line(DIR.$file)."</a><br>";
+            echo "<a href='view.php?name=".DIR."$file'>".read_line(DIR.$file)."</a><br>";
             
         }
     }
