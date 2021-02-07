@@ -14,7 +14,6 @@
 			body {
 				box-sizing: border-box;
 				min-width: 200px;
-				font-size:1.3em;
 				max-width: 980px;
 				margin: 0 auto;
 				padding: 10px;
@@ -25,6 +24,19 @@
 			form {
 				display:inline;
 				float:right;
+			}
+			input {
+				width:150px;
+			}
+			p {
+				margin:0 auto;
+			}
+			p.datestr {
+				font-size:0.8em;
+				color:gray;
+			}
+			p.title {
+				font-size:1.4em;
 			}
 		</style>
 	</head>
