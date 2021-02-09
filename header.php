@@ -1,6 +1,5 @@
 <?php
-	define('TITLE','宋斌的网络日志');
-	define('DIR','../jdzcn.github.io/_posts/');
+	include('config.php')
 ?>
 
 <!doctype html>
@@ -71,7 +70,7 @@ xmlhttp.send();
 		<a href="<?=dirname($_SERVER['SCRIPT_NAME'])?>"><b><?=TITLE?></b></a>
 		<form> 
   			<input type="search" id="query" name="key" placeholder="Search..." onkeyup="find(this.value)">
-  			<button>GO</button>
+  			
 		</form>	
 		<hr>
 	</header>
