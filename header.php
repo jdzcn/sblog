@@ -39,13 +39,40 @@
 				font-size:1.4em;
 			}
 		</style>
+
+<script type="text/javascript">
+function find(str)
+{
+var xmlhttp;
+  if (str.length==0)
+  { 
+    document.getElementById("blog").innerHTML="";
+    return;
+  }
+if (window.XMLHttpRequest)
+  xmlhttp=new XMLHttpRequest();
+else
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("blog").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","search.php?k="+str,true);
+xmlhttp.send();
+}
+</script>
 	</head>
 	<body>
 	<header>
 		<a href="<?=dirname($_SERVER['SCRIPT_NAME'])?>"><b><?=TITLE?></b></a>
-		<form action='index.php' method="get"> 
-  			<input type="search" id="query" name="key" placeholder="Search...">
+		<form> 
+  			<input type="search" id="query" name="key" placeholder="Search..." onkeyup="find(this.value)">
   			<button>GO</button>
 		</form>	
 		<hr>
 	</header>
+	<article id='blog'>

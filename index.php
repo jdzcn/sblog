@@ -1,32 +1,9 @@
 <?php
-
-function read_line($fileName) {
-        $fp = fopen($fileName, 'r');
-        fseek($fp, 23);
-        $data = fread($fp, 100);
-        fclose($fp);
-        return explode("\n",$data)[0];
-}
-
-
+include('read_line.php');
 include('header.php');
 
-$q = isset($_GET['key'])? htmlspecialchars($_GET['key']) : '';
-if($q) {
-    exec("find ".DIR." -name '*$q*'",$files);
-    #foreach($result as $line)
-    #echo "<a href='view.php?name=$line'>".read_line($line)."</a><br>";
-}
-else {
     $files = scandir(DIR,1);
-    /*foreach ($files as $file) {
-        if ($file != '.' && $file != '..') {
-            echo "<p class='datestr'>".substr($file,0,10).'</p>';
-            echo "<p class='title'><a href='view.php?name=".DIR."$file'>".read_line(DIR.$file)."</a></p>";
-        }
-    }
-    */
-}
+
 $page = !empty( $_GET['page'] ) ? (int) $_GET['page'] : 1;
 $total = count($files); //total items in array    
 $limit = 10; //per page    
