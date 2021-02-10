@@ -25,7 +25,7 @@
 				float:right;
 			}
 			input {
-				width:150px;
+				width:200px;
 			}
 			p {
 				margin:0 auto;

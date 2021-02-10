@@ -1,7 +1,7 @@
 <?php
 include('config.php');
 include('read_line.php');
-$k = isset($_GET['k'])? htmlspecialchars($_GET['k']) : '';
+$k = isset($_GET['k'])? htmlspecialchars(strtolower($_GET['k'])) : '';
 
 if ($k) {
 	$files=scandir(DIR,1);
