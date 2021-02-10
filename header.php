@@ -10,12 +10,15 @@
 		<title><?=TITLE?></title>
 		<link rel="stylesheet" href="github.css">
 		<style>
+			html {background-color:gray}
 			body {
+				background-color:white;
 				box-sizing: border-box;
+				min-height:980px;
 				min-width: 200px;
 				max-width: 980px;
 				margin: 0 auto;
-				padding: 10px;
+				padding: 30px;
 			}
 			footer {
 				text-align: center;
