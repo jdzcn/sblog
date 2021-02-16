@@ -253,6 +253,7 @@ table td:last-child {
 .md-fences,
 code,
 tt {
+    overflow:auto;
     display: inline-block ;
     width:100%;
     border: 1px solid #e7eaed;
