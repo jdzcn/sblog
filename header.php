@@ -16,7 +16,7 @@
 				box-sizing: border-box;
 				min-height:980px;
 				min-width: 200px;
-				max-width: 980px;
+				max-width: 1150px;
 				margin: 0 auto;
 				padding: 10px;
 			}

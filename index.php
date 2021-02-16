@@ -24,7 +24,7 @@ foreach($files as $file) {
 }
 
 $link = 'index.php?page=%d';
-$pagerContainer = '<div style="text-align:right">';   
+$pagerContainer = '<div style="text-align:right">共有'.($total-2).'篇日志';   
 if( $totalPages != 0 ) 
 {
   if( $page == 1 ) 
