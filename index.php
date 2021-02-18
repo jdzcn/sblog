@@ -2,8 +2,8 @@
 include('read_line.php');
 include('header.php');
 
-    $files = scandir(DIR,1);
-
+    // $files = scandir(DIR,1);
+$files = array_filter(scandir(DIR,1), function($item) {return $item[0] !== '.';});
 $page = !empty( $_GET['page'] ) ? (int) $_GET['page'] : 1;
 $total = count($files); //total items in array    
 $limit = 10; //per page    
@@ -13,7 +13,7 @@ $page = min($page, $totalPages); //get last page when $_GET['page'] > $totalPage
 $offset = ($page - 1) * $limit;
 if( $offset < 0 ) $offset = 0;
 
-$files= array_slice( $files, $offset, $limit );
+$files= array_slice( $files,$offset,$limit );
 
 foreach($files as $file) {
     $file=str_replace(DIR,'',$file);
@@ -24,7 +24,7 @@ foreach($files as $file) {
 }
 
 $link = 'index.php?page=%d';
-$pagerContainer = '<div style="text-align:right">共有'.($total-2).'篇日志';   
+$pagerContainer = '<div style="text-align:right">共有'.$total.'篇日志';   
 if( $totalPages != 0 ) 
 {
   if( $page == 1 ) 
