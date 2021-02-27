@@ -13,7 +13,9 @@ include('header.php');
 
 $q = isset($_GET['key'])? htmlspecialchars($_GET['key']) : '';
 if($q) {
-    exec("find ".DIR." -name '*$q*'",$files);
+    exec("grep -lr '$q' ".DIR,$files);
+
+    // exec("find ".DIR." -name '*$q*'",$files);
     #foreach($result as $line)
     #echo "<a href='view.php?name=$line'>".read_line($line)."</a><br>";
 }
