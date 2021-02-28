@@ -20,7 +20,8 @@ if($q) {
     #echo "<a href='view.php?name=$line'>".read_line($line)."</a><br>";
 }
 else {
-    $files = scandir(DIR,1);
+    // $files = scandir(DIR,1);
+    $files = array_filter(scandir(DIR,1), function($item) {return $item[0] !== '.';});
     /*foreach ($files as $file) {
         if ($file != '.' && $file != '..') {
             echo "<p class='datestr'>".substr($file,0,10).'</p>';
